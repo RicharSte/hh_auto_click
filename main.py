@@ -8,13 +8,12 @@ req.headers = {"Cookie":"ВСТАВЬ СЮДА СВОИ КУКИ", "Host": "hh.r
 
 def send_req(item):
     print(item)
-    if int(item) != 72478763:
-        check = req.post('https://hh.ru//applicant/vacancy_response/popup', data={"_xsrf":"СУДА НУЖНО ВСТАВИТЬ СВОЙ _xsrf ТОКЕН", "letter": """ВСТАВЬ СЮДА СВОЕ ПИСЬМО""", "lux": True, "withoutTest": "no", "hhtmFromLabel": "undefined", "hhtmSourceLabel": "undefined"})
+    check = req.post('https://hh.ru//applicant/vacancy_response/popup', data={"_xsrf":"СУДА НУЖНО ВСТАВИТЬ СВОЙ _xsrf ТОКЕН", "letter": """ВСТАВЬ СЮДА СВОЕ ПИСЬМО""", "lux": True, "withoutTest": "no", "hhtmFromLabel": "undefined", "hhtmSourceLabel": "undefined"})
 
-        print(check.status_code, item)
-        if check.status_code != 200:
-            if check.json()['error' ] == 'negotiations-limit-exceeded':
-                return False
+    print(check.status_code, item)
+    if check.status_code != 200:
+        if check.json()['error' ] == 'negotiations-limit-exceeded':
+            return False
 
 if __name__ == "__main__":
     n = 0
