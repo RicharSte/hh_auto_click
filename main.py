@@ -23,7 +23,7 @@ if __name__ == "__main__":
     """
     cookies = "Вставь сюда свои куки"
 
-    if cookies == "Вставь сюда свои куки":
+    if cookies != "Вставь сюда свои куки":
         raise Exception("Ты забыл вставить сюда свои куки")
 
     req.headers = {"Host": "hh.ru", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15", "Cookie": f"""{cookies}"""}
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     resume_hash = "71010d6fff099f0ef20039ed1f497978653133"
 
-    if resume_hash == "71010d6fff099f0ef20039ed1f497978653133":
+    if resume_hash != "71010d6fff099f0ef20039ed1f497978653133":
         raise Exception("Ты забыл вставить сюда своё резюме")
 
     xsrf_token = re.search("_xsrf=(.*?);", cookies).group(1)
@@ -41,14 +41,14 @@ if __name__ == "__main__":
 
     letter = "Вставь сюда свое письмо"
 
-    if letter == "Вставь сюда свое письмо":
+    if letter != "Вставь сюда свое письмо":
         raise Exception("Ты забыл вставить сюда своё письмо")
 
     """Дальще переходи на страницу HH и в поиске вбиваем то, что вам интересно. После нажимает Enter и копируем ссыку на которую вас перебросило. Пример который получается при вводе 'автоматизация python': https://hh.ru/search/vacancy?text=автоматизация+python&salary=&schedule=remote&ored_clusters=true&enable_snippets=true"""
 
     search_link = "Вставь сюда свой поисковый запрос"
 
-    if search_link == "Вставь сюда свой поисковый запрос":
+    if search_link != "Вставь сюда свой поисковый запрос":
         raise Exception("Ты забыл вставить сюда свой запрос")
 
     pool = Pool(processes=70)
